@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Your Name, a web developer building accessible, responsive websites.">
+  <title>Your Name | Web Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top">Your Name</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation menu">Menu</button>
+      <nav id="siteNav" class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-pressed="false">Dark mode</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <div>
+          <h1>I build websites that work for everyone.</h1>
+          <p class="lead">Hi, I'm Your Name, a web developer who writes clean HTML, CSS, and JavaScript. Take a look at what I've built while learning web development.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#projects">See my projects</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <img class="avatar" src="images/profile.svg" alt="Illustration of a person in a blue shirt on a yellow background, representing the site owner" width="400" height="400">
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container narrow">
+        <h2 id="about-title">About me</h2>
+        <p>I'm learning to build websites from the ground up: structure with HTML, style with CSS, and behavior with JavaScript. I use tools like Microsoft Copilot to write, debug, and improve my code, and I check everything myself before it ships.</p>
+        <p>I care about accessibility and responsive design, so my sites are easy to use on any screen and with any input method.</p>
+      </div>
+    </section>
+
+    <section class="section alt" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Projects</h2>
+        <div class="filters" role="group" aria-label="Filter projects by type">
+          <button class="filter active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" data-filter="js" aria-pressed="false">JavaScript</button>
+          <button class="filter" data-filter="css" aria-pressed="false">CSS</button>
+          <button class="filter" data-filter="html" aria-pressed="false">HTML</button>
+        </div>
+        <p class="sr-only" id="filterStatus" role="status" aria-live="polite"></p>
+
+        <div class="grid" id="projectGrid">
+          <article class="card" data-category="js">
+            <img src="images/project-weather.svg" alt="Weather app screenshot showing a header, a forecast panel, and a temperature card" loading="lazy" width="600" height="380">
+            <div class="card-body">
+              <h3>Weather Dashboard</h3>
+              <p>Search a city and see the forecast. Built with JavaScript and a public API.</p>
+              <a href="#" aria-label="View Weather Dashboard project">View project</a>
+            </div>
+          </article>
+          <article class="card" data-category="js">
+            <img src="images/project-todo.svg" alt="To-do list app screenshot with a task list on the left and a summary panel on the right" loading="lazy" width="600" height="380">
+            <div class="card-body">
+              <h3>Task Tracker</h3>
+              <p>Add, complete, and delete tasks. Tasks are saved in the browser.</p>
+              <a href="#" aria-label="View Task Tracker project">View project</a>
+            </div>
+          </article>
+          <article class="card" data-category="css">
+            <img src="images/project-recipes.svg" alt="Recipe site screenshot with a red banner and a grid of recipe cards" loading="lazy" width="600" height="380">
+            <div class="card-body">
+              <h3>Recipe Gallery</h3>
+              <p>A responsive card layout made with CSS Grid and Flexbox.</p>
+              <a href="#" aria-label="View Recipe Gallery project">View project</a>
+            </div>
+          </article>
+          <article class="card" data-category="html js">
+            <img src="images/project-quiz.svg" alt="Quiz app screenshot with a teal background, a question panel, and a yellow answer button area" loading="lazy" width="600" height="380">
+            <div class="card-body">
+              <h3>Quick Quiz</h3>
+              <p>A semantic HTML quiz form with instant scoring in JavaScript.</p>
+              <a href="#" aria-label="View Quick Quiz project">View project</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container narrow">
+        <h2 id="skills-title">Skills</h2>
+        <ul class="skills">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Responsive design</li>
+          <li>Accessibility</li>
+          <li>Git &amp; GitHub</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section alt" id="contact" aria-labelledby="contact-title">
+      <div class="container narrow">
+        <h2 id="contact-title">Contact</h2>
+        <p>Have a question or an opportunity? Send me a message.</p>
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="nameError">
+            <span class="error" id="nameError" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="emailError">
+            <span class="error" id="emailError" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required aria-describedby="messageError"></textarea>
+            <span class="error" id="messageError" aria-live="polite"></span>
+          </div>
+          <button class="btn" type="submit">Send message</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> Your Name. Built with HTML, CSS, and JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
